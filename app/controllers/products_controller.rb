@@ -8,8 +8,10 @@ class ProductsController < ApplicationController
     def create
         @product = Product.new(name: params[:name], price: params[:price])
         if @product.save
-            redirect_to root_path
+            flash.now[:success] = "succeeded"
+            render new_product_path
         else 
+            flash.now[:error] = "error"
             render new_product_path
         end
     end
