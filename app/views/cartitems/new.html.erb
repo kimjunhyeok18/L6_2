@@ -1,0 +1,11 @@
+<% @products.each do |p| %>
+        name: <%= p.name %> 
+        price: <%= p.price %> 
+        <%= form_tag "/cartitems", method: :post do %>
+            <%= hidden_field_tag :product_id, value= p.id %>
+            <%= label_tag "個数" %>
+            <%= text_field_tag :quantity %>
+            <%= submit_tag "add" %>
+        <% end %>
+    <hr>
+<% end %>

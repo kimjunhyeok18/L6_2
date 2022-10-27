@@ -1,0 +1,15 @@
+<% @all_price = 0 %>
+<% @cartitems.each do |i| %>
+    <% if i %>
+        name: <%= i.item_name %>
+        EA: <%= i.quantity %>
+        price: <%= i._price %>
+        per price: <%= i.per_price %>
+        <%= button_to "del", "/cartitems/#{i.id}", method: :delete %>
+        <% @all_price += i._price.to_i %>
+    <% end %>
+    <hr>
+<% end %>
+<div>
+     <%= @all_price %>en
+</div>

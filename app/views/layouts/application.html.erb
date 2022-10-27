@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <div><%= link_to "main", root_path %></div>
+    <div><%= link_to "my cart", "/carts/#{current_cart.id}" %></div>
+    <div><%= link_to "cart change", top_re_path %></div>
     <%= yield %>
   </body>
 </html>

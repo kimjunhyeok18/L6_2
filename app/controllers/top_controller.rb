@@ -1,5 +1,8 @@
 class TopController < ApplicationController
     def main
-        @cart = current_cart
+    end
+    def re
+        delete_cart
+        redirect_to root_path
     end
 end

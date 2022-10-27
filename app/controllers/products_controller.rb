@@ -13,4 +13,9 @@ class ProductsController < ApplicationController
             render new_product_path
         end
     end
+    def destroy
+        product = Product.find(params[:id])
+        product.destroy
+        redirect_to products_path
+    end
 end

@@ -1,7 +1,12 @@
 
 <% @products.each do |p| %>
+
+        <div>
         id: <%= p.id %> 
         name: <%= p.name %> 
         price: <%= p.price %> 
+        <%= button_to "del", "/products/#{p.id}", method: :delete %>
+        </div>
+
     <hr>
 <% end %>
